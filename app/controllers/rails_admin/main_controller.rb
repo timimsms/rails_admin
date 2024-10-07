@@ -124,7 +124,7 @@ module RailsAdmin
       options = {}
       options = options.merge(page: (params[Kaminari.config.param_name] || 1).to_i, per: (params[:per] || model_config.list.items_per_page)) if pagination
       options = options.merge(include: associations) unless associations.blank?
-      options = options.merge(get_sort_hash(model_config))
+      # options = options.merge(get_sort_hash(model_config))
       options = options.merge(query: params[:query]) if params[:query].present?
       options = options.merge(filters: params[:f]) if params[:f].present?
       options = options.merge(bulk_ids: params[:bulk_ids]) if params[:bulk_ids]
